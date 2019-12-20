@@ -27,4 +27,11 @@ export class TransportatoraStoreService {
       return !(transportadora.id === transportadoraToRemove.id);
     }));
   }
+
+  updateTransportadora(transportadoraToUpdate: Transportadora) {
+    this._transportadoras.next(this._transportadoras.value.filter(transportadora => {
+      return !(transportadora.id === transportadoraToUpdate.id);
+    }));
+    this._transportadoras.next([transportadoraToUpdate].concat(this._transportadoras.value));
+  }
 }
