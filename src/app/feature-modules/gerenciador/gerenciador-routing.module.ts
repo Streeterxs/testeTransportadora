@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PrincipalComponent } from './principal/principal.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { GerenciadorComponent } from './gerenciador.component';
+import { AtualizarComponent } from './atualizar/atualizar.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,18 @@ const routes: Routes = [
         path: 'cadastrar',
         component: CadastroComponent
       },
+      {
+        path: 'atualizar/:id',
+        component: AtualizarComponent
+      },
+      {
+        path: '',
+        redirectTo: 'principal'
+      },
+      {
+        path: '**',
+        redirectTo: 'principal'
+      }
     ]
   }
 ];

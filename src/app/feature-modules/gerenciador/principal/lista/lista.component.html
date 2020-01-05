@@ -1,6 +1,3 @@
 <div>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+    <app-card *ngFor="let transportadora of listaTransportadora" [transportadora]="transportadora" (emitTitleClick)="emitClickFromCard.emit($event)"></app-card>
 </div>

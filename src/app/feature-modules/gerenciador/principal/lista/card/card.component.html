@@ -5,15 +5,16 @@
         </div>
         <div class="col-auto d-flex align-items-center justify-content-center">
             <div>
-                <h5 class="card-title"><a href="#">Card title</a></h5>
-                <h6 class="card-subtitle mb-2">Card subtitle</h6>
+                <h5 class="card-title" (click)="titleClick()"><a>{{transportadora?.nome}}</a></h5>
+                <h6 class="card-subtitle mb-2">{{transportadora?.empresa}}</h6>
             </div>
         </div>
-        <div class="col d-flex align-items-center justify-content-center">
-            <p class="card-text">Some quick example text to build asdasdasdasd the card title and make up the bulk of the card's content.</p>
+        <div class="col d-flex flex-column align-items-center justify-content-center">
+            <p class="card-text">{{transportadora?.telefone}}</p>
+            <p class="card-text">{{transportadora?.email}}</p>
         </div>
         <div class="col-auto d-flex justify-content-center">
-            <p>Fale agora: <a href="#">333111444</a></p>
+            <p>Fale agora: <a href="#">{{transportadora?.telefone}}</a></p>
         </div>
     </div>
 </div>

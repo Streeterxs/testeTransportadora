@@ -1,0 +1,113 @@
+<form [formGroup]="formularioTransportadora" (ngSubmit)="submit()">
+    <div class="form-row">
+        <div class="form-group col-12 form-row">
+            <label class="col-sm-2 col-form-label" [ngClass]="{'text-danger': formularioTransportadora.get('email').errors && formularioTransportadora.get('email').touched && formularioTransportadora.get('email').dirty}">E-mail: </label>
+            <div class="col-sm-10 mx-0 px-0">
+                <input type="email" class="form-control" [ngClass]="{'is-invalid': formularioTransportadora.get('email').errors && formularioTransportadora.get('email').touched && formularioTransportadora.get('email').dirty}" aria-describedby="emailHelp" placeholder="Digite um email válido..." formControlName="email">
+                <div class="row" *ngIf="formularioTransportadora.get('email').errors && formularioTransportadora.get('email').touched && formularioTransportadora.get('email').dirty">
+                    <small class="form-text text-danger col-12" *ngIf="formularioTransportadora.get('email').errors.required">Este campo é obrigatório.</small>
+                    <small class="form-text text-danger col-12">E-mail precisa ser válido.</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-12 form-row">
+            <label class="col-sm-2 col-form-label" [ngClass]="{'text-danger': formularioTransportadora.get('nome').errors && formularioTransportadora.get('nome').touched && formularioTransportadora.get('nome').dirty}">Nome: </label>
+            <div class="col-sm-10 mx-0 px-0">
+                <input type="email" class="form-control" [ngClass]="{'is-invalid': formularioTransportadora.get('nome').errors && formularioTransportadora.get('nome').touched && formularioTransportadora.get('nome').dirty}" aria-describedby="nomeHelp" placeholder="Digite um nome..." formControlName="nome">
+                <div class="row" *ngIf="formularioTransportadora.get('nome').errors && formularioTransportadora.get('nome').touched && formularioTransportadora.get('nome').dirty">
+                    <small class="form-text text-danger col-12" *ngIf="formularioTransportadora.get('nome').errors.required">Este campo é obrigatório.</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-12 form-row">
+            <label class="col-sm-2 col-form-label" [ngClass]="{'text-danger': formularioTransportadora.get('empresa').errors && formularioTransportadora.get('empresa').touched && formularioTransportadora.get('empresa').dirty}">Empresa: </label>
+            <div class="col-sm-10 mx-0 px-0">
+                <input type="email" class="form-control" [ngClass]="{'is-invalid': formularioTransportadora.get('empresa').errors && formularioTransportadora.get('empresa').touched && formularioTransportadora.get('empresa').dirty}" aria-describedby="emailHelp" placeholder="Enter email" formControlName="empresa">
+                <div class="row" *ngIf="formularioTransportadora.get('empresa').errors && formularioTransportadora.get('empresa').touched && formularioTransportadora.get('empresa').dirty">
+                    <small class="form-text text-danger col-12" *ngIf="formularioTransportadora.get('empresa').errors.required">Este campo é obrigatório.</small>
+                    <small class="form-text text-danger col-12">Empresa precisa ter no mínimo 4 caracteres.</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-12 form-row">
+            <label class="col-sm-2 col-form-label" [ngClass]="{'text-danger': formularioTransportadora.get('telefone').errors && formularioTransportadora.get('telefone').touched && formularioTransportadora.get('telefone').dirty}">Telefone: </label>
+            <div class="col-sm-10 mx-0 px-0">
+                <input type="email" class="form-control" [ngClass]="{'is-invalid': formularioTransportadora.get('telefone').errors && formularioTransportadora.get('telefone').touched && formularioTransportadora.get('telefone').dirty}" aria-describedby="emailHelp" placeholder="Enter email" formControlName="telefone">
+                <div class="row" *ngIf="formularioTransportadora.get('telefone').errors && formularioTransportadora.get('telefone').touched && formularioTransportadora.get('telefone').dirty">
+                    <small class="form-text text-danger col-12" *ngIf="formularioTransportadora.get('telefone').errors.required">Este campo é obrigatório.</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-12 form-row">
+            <label class="col-sm-2 col-form-label" [ngClass]="{'text-danger': formularioTransportadora.get('modal').errors && formularioTransportadora.get('modal').touched && formularioTransportadora.get('modal').dirty}">Modal: </label>
+            <div class="col-sm-10 mx-0 px-0">
+                <ng-multiselect-dropdown
+                [placeholder]="'custom placeholder'"
+                [data]="multiselectModal"
+                [settings]="dropdownSettings"
+                formControlName="modal">
+                </ng-multiselect-dropdown>
+                <div class="row" *ngIf="formularioTransportadora.get('modal').errors && formularioTransportadora.get('modal').touched && formularioTransportadora.get('modal').dirty">
+                    <small class="form-text text-danger col-12" *ngIf="formularioTransportadora.get('modal').errors.required">Este campo é obrigatório.</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-12 form-row">
+            <label class="col-sm-2 col-form-label" [ngClass]="{'text-danger': formularioTransportadora.get('cep').errors && formularioTransportadora.get('cep').touched && formularioTransportadora.get('cep').dirty}">CEP: </label>
+            <div class="col-sm-10 mx-0 px-0">
+                <input type="email" class="form-control" [ngClass]="{'is-invalid': formularioTransportadora.get('cep').errors && formularioTransportadora.get('cep').touched && formularioTransportadora.get('cep').dirty}" aria-describedby="emailHelp" placeholder="Enter email" formControlName="cep">
+                <div class="row" *ngIf="formularioTransportadora.get('cep').errors && formularioTransportadora.get('cep').touched && formularioTransportadora.get('cep').dirty">
+                    <small class="form-text text-danger col-12" *ngIf="formularioTransportadora.get('cep').errors.required">Este campo é obrigatório.</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-12 form-row">
+            <label class="col-sm-2 col-form-label" [ngClass]="{'text-danger': formularioTransportadora.get('uf').errors && formularioTransportadora.get('uf').touched && formularioTransportadora.get('uf').dirty}">uf: </label>
+            <div class="col-sm-10 mx-0 px-0">
+                <select class="custom-select" formControlName="uf">
+                    <option *ngFor="let uf of multiselectUf" [value]="uf?.item_id">{{uf?.item_text}}</option>
+                </select>
+                <div class="row" *ngIf="formularioTransportadora.get('uf').errors && formularioTransportadora.get('uf').touched && formularioTransportadora.get('uf').dirty">
+                    <small class="form-text text-danger col-12" *ngIf="formularioTransportadora.get('uf').errors.required">Este campo é obrigatório.</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-12 form-row">
+            <label class="col-sm-2 col-form-label" [ngClass]="{'text-danger': formularioTransportadora.get('cidade').errors && formularioTransportadora.get('cidade').touched && formularioTransportadora.get('cidade').dirty}">Cidade: </label>
+            <div class="col-sm-10 mx-0 px-0">
+                <input type="email" class="form-control" [ngClass]="{'is-invalid': formularioTransportadora.get('cidade').errors && formularioTransportadora.get('cidade').touched && formularioTransportadora.get('cidade').dirty}" aria-describedby="emailHelp" placeholder="Enter email" formControlName="cidade">
+                <div class="row" *ngIf="formularioTransportadora.get('cidade').errors && formularioTransportadora.get('cidade').touched && formularioTransportadora.get('cidade').dirty">
+                    <small class="form-text text-danger col-12" *ngIf="formularioTransportadora.get('cidade').errors.required">Este campo é obrigatório.</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-12 form-row">
+            <label class="col-sm-2 col-form-label" [ngClass]="{'text-danger': formularioTransportadora.get('bairro').errors && formularioTransportadora.get('bairro').touched && formularioTransportadora.get('bairro').dirty}">Bairro: </label>
+            <div class="col-sm-10 mx-0 px-0">
+                <input type="email" class="form-control" [ngClass]="{'is-invalid': formularioTransportadora.get('bairro').errors && formularioTransportadora.get('bairro').touched && formularioTransportadora.get('bairro').dirty}" aria-describedby="emailHelp" placeholder="Enter email" formControlName="bairro">
+                <div class="row" *ngIf="formularioTransportadora.get('bairro').errors && formularioTransportadora.get('bairro').touched && formularioTransportadora.get('bairro').dirty">
+                    <small class="form-text text-danger col-12" *ngIf="formularioTransportadora.get('bairro').errors.required">Este campo é obrigatório.</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-12 form-row">
+            <label class="col-sm-2 col-form-label" [ngClass]="{'text-danger': formularioTransportadora.get('rua').errors && formularioTransportadora.get('rua').touched && formularioTransportadora.get('rua').dirty}">Rua / Avenidada: </label>
+            <div class="col-sm-10 mx-0 px-0">
+                <input type="email" class="form-control" [ngClass]="{'is-invalid': formularioTransportadora.get('rua').errors && formularioTransportadora.get('rua').touched && formularioTransportadora.get('rua').dirty}" aria-describedby="emailHelp" placeholder="Enter email" formControlName="rua">
+                <div class="row" *ngIf="formularioTransportadora.get('rua').errors && formularioTransportadora.get('rua').touched && formularioTransportadora.get('rua').dirty">
+                    <small class="form-text text-danger col-12" *ngIf="formularioTransportadora.get('rua').errors.required">Este campo é obrigatório.</small>
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-12 form-row">
+            <label class="col-sm-2 col-form-label" [ngClass]="{'text-danger': formularioTransportadora.get('numero').errors && formularioTransportadora.get('numero').touched && formularioTransportadora.get('numero').dirty}">Número: </label>
+            <div class="col-sm-10 mx-0 px-0">
+                <input type="email" class="form-control" [ngClass]="{'is-invalid': formularioTransportadora.get('numero').errors && formularioTransportadora.get('numero').touched && formularioTransportadora.get('numero').dirty}" aria-describedby="emailHelp" placeholder="Enter email" formControlName="numero">
+                <div class="row" *ngIf="formularioTransportadora.get('numero').errors && formularioTransportadora.get('numero').touched && formularioTransportadora.get('numero').dirty">
+                    <small class="form-text text-danger col-12" *ngIf="formularioTransportadora.get('numero').errors.required">Este campo é obrigatório.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" hidden class="btn btn-primary" [disabled]="formularioTransportadora.invalid">Submit</button>
+</form>

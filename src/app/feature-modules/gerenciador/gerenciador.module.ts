@@ -1,11 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+
+import { GerenciadorComponent } from './gerenciador.component';
 
 import { GerenciadorRoutingModule } from './gerenciador-routing.module';
-import { GerenciadorComponent } from './gerenciador.component';
 import { CadastroModule } from './cadastro/cadastro.module';
 import { PrincipalModule } from './principal/principal.module';
+import { AtualizarModule } from './atualizar/atualizar.module';
 
 import { TransportatoraEndpointService } from './services/transportatora-endpoint.service';
 import { TransportatoraFacadeService } from './services/transportatora-facade.service';
@@ -21,7 +24,9 @@ import { TransportatoraStoreService } from './services/transportatora-store.serv
     GerenciadorRoutingModule,
     HttpClientModule,
     PrincipalModule,
-    CadastroModule
+    CadastroModule,
+    AtualizarModule,
+    RouterModule
   ],
   providers: [
     TransportatoraEndpointService,
